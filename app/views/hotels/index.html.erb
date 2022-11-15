@@ -1,0 +1,25 @@
+ <div class="container">
+    <h1>ホテル一覧</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <% @hotels.each do |hotel| %>
+        <div class="col">
+            <div class="card " style="width: 18rem;">
+                <img src=<%= hotel.picture_url %> class="card-img-top" alt="..." >
+                <div class="card-body">
+                    <h5 class="card-title"><%= hotel.name %></h5>
+                    <h6 class="card-text"><%= hotel.prefecture.place %></h6>
+                    <h6 class="card-text"><%= hotel.detail %></h6>
+                </div>
+            </div>
+            <div class="card-footer" style="width: 18rem;">
+                <small class="text-muted">
+                <a href=<%= hotel_path(hotel) %> class="card-link">詳細情報</a>
+                <a href=<%= new_hotel_review_path(hotel) %> class="card-link">レビューを書く</a>
+                </small>
+            </div>
+        </div>
+        <% end %>
+    </div>
+    <div class="mb-5">
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<h3>レビュー詳細</h3>
+    <div class=my-4>
+        <table class="table">
+            <thead>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="col"> Rate:<%= @review.rate %></th>
+                </tr>
+                <tr>
+                <th scope="row">Title:<%= @review.title %></th>
+                </tr>
+                <tr>
+                
+                <th scope="row">Name:<%= @review.user_name %></th>
+                </tr>
+                <tr>
+                
+                <th scope="row">詳細:<%= @review.description %></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+  <div class="p-2 bd-highlight text-center "><%= link_to "レビュー一覧に戻る", hotel_reviews_path %></div>

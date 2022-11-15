@@ -1,0 +1,23 @@
+<div class="container">
+
+<h2><%= @hotel.name %> レビュー一覧</h2>
+
+  <% @reviews.each do |review| %>
+        <div class="card my-3" style="width: auto;">
+        <div class="card-header">
+            Rate: <%= review.rate %>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">タイトル：<%= review.title %></li>
+            <li class="list-group-item">名前：<%= review.user_name %></li>
+            <li class="list-group-item">詳細：<%= review.description %><br><%= link_to "もっと見る", hotel_review_path(@hotel,review) %></li>
+        </ul>
+        </div>
+  <% end %>
+
+<div class="row d-flex mb-5">
+<div class="p-2 bd-highlight text-center col-6"><%= link_to "レビューを投稿する", new_hotel_review_path %></div>
+<div class="p-2 bd-highlight text-center col-6"><%= link_to "ホテル詳細", hotel_path(@hotel) %></div>
+</div>   
+
+</div>
